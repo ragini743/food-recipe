@@ -85,3 +85,18 @@ ul li{
 h4{
     margin: 15px;
 }
+.meal-Header{
+    margin: 10px;
+}
+.meal-body{
+    display:flex;
+    margin: 10px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.searchContainer{
+    width: 50%;
+    margin: auto;
+    width: 600px;
+    background-color: aquamarine;
+}
