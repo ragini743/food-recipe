@@ -72,16 +72,22 @@ submit.addEventListener("click", async (e) => {
     const li = document.createElement("li");
     const img = document.createElement("img");
     img.setAttribute("src", meal.strMealThumb);
-    img.classList.add("last-image")
-    li.append(`${meal.strMeal}`)
+    img.classList.add("last-image");
+    li.append(`name : ${meal.strMeal}`);
     li.prepend(img);
     ul.append(li);
   li.addEventListener("click",(e) => {
-    console.log("hello")
+    console.log("hello",li)
   const div = document.createElement("div")
-  div.setAttribute("id","NewItemContainer");
-const body =  document.body
-body.append(div);
+  div.setAttribute("id","NewItem");
+const heading5 = document.createElement("h6")
+  
+  heading5.append(`instruction : ${meal.strInstructions
+  }`)
+div.prepend(li)
+div.append(heading5)
+const newItemContainer =  document.getElementById("newItemContainer")
+newItemContainer.append(div);
 });
 
   }

@@ -4,13 +4,25 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* width: 100vh; */
 
 }
-#NewItemContainer{
+#newItemContainer{
 position: absolute;
-background:red;
-height: 100%;
-width: 100%;
+padding: 10px;
+border: 2px solid black;
+width: 400px;
+margin-left:20px ;
+}
+
+
+#newItemContainer #NewItem li{
+    list-style: none;
+width: 60%;
+margin: auto;
+}
+#newItemContainer #NewItem ul{
+    list-style-type: none;
 }
 
 *{margin: 0;
@@ -118,5 +130,5 @@ h4{
 }
 .last-ul li{
     min-width: 150px;
-     /* grid-template-columns: auto auto ; */
+    
 }
