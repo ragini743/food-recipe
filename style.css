@@ -9,16 +9,19 @@ body{
 }
 #newItemContainer{
 position: absolute;
-padding: 10px;
-border: 2px solid black;
-width: 400px;
+top: 0;
+padding: 5px;
+
+width: 350px;
 margin-left:20px ;
 }
-
+#newItemContainer #NewItem{
+    border: 2px solid black;
+}
 
 #newItemContainer #NewItem li{
     list-style: none;
-width: 60%;
+width: 90%;
 margin: auto;
 }
 #newItemContainer #NewItem ul{
@@ -29,9 +32,10 @@ margin: auto;
 padding: 0;}
 
 .mobile-container{
+    position: relative;
     border: 2px solid;
     width: 400px;
-    margin: auto;
+    margin: 10px auto;
 }
 .image{
     
@@ -118,7 +122,6 @@ h4{
 .searchContainer{
     width: 100%;
     margin: auto;
-    /* width: 600px; */
     background-color: aquamarine;
 }
 .last-ul{
@@ -131,4 +134,16 @@ h4{
 .last-ul li{
     min-width: 150px;
     
+}
+.searchContainerForTop{
+    position: absolute;
+    top: 70px;
+    /* margin-bottom: 0px; */
+    bottom: 0px;
+}
+.src{
+    width:40px;
+}
+.hidden{
+    display: none;
 }

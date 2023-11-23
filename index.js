@@ -56,17 +56,18 @@ function addMeal(mealData, random = false) {
 const input = document.getElementsByTagName("input")[0];
 
 const submit = document.getElementsByTagName("button")[0];
+const SRC = "https://static.thenounproject.com/png/4425728-200.png";
 console.log("submit", submit);
 submit.addEventListener("click", async (e) => {
   const meals = await getMealBySearch(input.value);
-
+  searchContainer.classList.add("searchContainerForTop");
   // searchContainer.innerHTML=meals.meals
   console.log("search", searchContainer);
 
   console.log("meals", meals);
   // ul  child
   const ul = document.createElement("ul");
-  ul.classList.add("last-ul")
+  ul.classList.add("last-ul");
   for (let meal of meals.meals) {
     console.log(meal);
     const li = document.createElement("li");
@@ -76,20 +77,26 @@ submit.addEventListener("click", async (e) => {
     li.append(`name : ${meal.strMeal}`);
     li.prepend(img);
     ul.append(li);
-  li.addEventListener("click",(e) => {
-    console.log("hello",li)
-  const div = document.createElement("div")
-  div.setAttribute("id","NewItem");
-const heading5 = document.createElement("h6")
-  
-  heading5.append(`instruction : ${meal.strInstructions
-  }`)
-div.prepend(li)
-div.append(heading5)
-const newItemContainer =  document.getElementById("newItemContainer")
-newItemContainer.append(div);
-});
+    li.addEventListener("click", (e) => {
+      console.log("hello", li);
+      const div = document.createElement("div");
+      div.setAttribute("id", "NewItem");
+      const heading5 = document.createElement("h6");
 
+      heading5.append(`instruction : ${meal.strInstructions}`);
+      const src = document.createElement("img")
+      src.setAttribute("src",SRC);
+      src.classList.add("src") ;
+      src.addEventListener("click",()=>{
+        div.classList.add("hidden")
+      })
+      div.prepend(li);
+      div.prepend(src);
+
+      div.append(heading5);
+      const newItemContainer = document.getElementById("newItemContainer");
+      newItemContainer.append(div);
+    });
   }
   searchContainer.append(ul);
   input.value = "";
